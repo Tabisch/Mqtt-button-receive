@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add MQTT button",
+        "description": "Listen to an MQTT topic and fire a button event whenever a matching message arrives.",
+        "data": {
+          "name": "Name",
+          "topic": "MQTT topic",
+          "value_template": "Filter template",
+          "event_types": "Event types",
+          "qos": "QoS"
+        },
+        "data_description": {
+          "topic": "Topic to subscribe to. Wildcards (+ and #) are allowed.",
+          "value_template": "Optional. Variables: value (raw payload), value_json (parsed JSON payload), topic. Return an event type (e.g. press, double_press) to fire it, true to fire the first event type, or anything else to ignore the message. Leave empty to treat every message as a press.",
+          "event_types": "Event types this button can fire. The first one is used when the template returns true or when no template is set.",
+          "qos": "MQTT quality of service used for the subscription."
+        }
+      }
+    },
+    "error": {
+      "invalid_topic": "Invalid MQTT subscribe topic.",
+      "no_event_types": "At least one event type is required."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MQTT button settings",
+        "data": {
+          "topic": "MQTT topic",
+          "value_template": "Filter template",
+          "event_types": "Event types",
+          "qos": "QoS"
+        },
+        "data_description": {
+          "topic": "Topic to subscribe to. Wildcards (+ and #) are allowed.",
+          "value_template": "Optional. Variables: value (raw payload), value_json (parsed JSON payload), topic. Return an event type (e.g. press, double_press) to fire it, true to fire the first event type, or anything else to ignore the message. Leave empty to treat every message as a press.",
+          "event_types": "Event types this button can fire. The first one is used when the template returns true or when no template is set.",
+          "qos": "MQTT quality of service used for the subscription."
+        }
+      }
+    },
+    "error": {
+      "invalid_topic": "Invalid MQTT subscribe topic.",
+      "no_event_types": "At least one event type is required."
+    }
+  }
+}
